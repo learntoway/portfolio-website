@@ -1,0 +1,50 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome | Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #74ABE2, #5563DE);
+            color: white;
+            text-align: center;
+            margin-top: 15%;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: white;
+            color: #5563DE;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌎 Welcome to Innovation World</h1>
+    <div class="subtitle">A journey of creativity, technology & passion.</div>
+
+    <a href="/about">Explore My Portfolio →</a>
+</body>
+</html>
