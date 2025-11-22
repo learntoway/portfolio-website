@@ -1,19 +1,32 @@
-# This chooses a lightweight Linux image that already has Java 17 installed.
-# Without Java, our Spring Boot app cannot run.
-FROM openjdk:17-jdk-slim
+# ===== Stage 1: Build =====
+# Use Maven + Java 17 to build the project
+FROM maven:3.9.3-eclipse-temurin-17 AS build
 
-# This creates/uses a folder named /app inside the container.
-# All next commands will run inside this folder.
+# Set working directory
 WORKDIR /app
 
-# This copies the built jar file from your system (target folder)
-# into the container and renames it to app.jar.
-COPY target/*.jar app.jar
+# Copy pom.xml and download dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# This tells Docker that our Spring Boot app uses port 8080.
-# Render or any cloud platform will know which port to expose.
+# Copy source code
+COPY src ./src
+
+# Build JAR without running tests
+RUN mvn clean package -DskipTests
+
+# ===== Stage 2: Run =====
+# Use lightweight Java 17 image to run the app
+FROM eclipse-temurin:17-jdk-slim
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy the built JAR from the build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose default Spring Boot port
 EXPOSE 8080
 
-# This is the command that runs when the container starts.
-# Same as running: java -jar app.jar
+# Run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "app.jar"]
