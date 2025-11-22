@@ -1,0 +1,98 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Demo: Data Patterns & Aerospace</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #1f2937;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+    }
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        width: 300px;
+        padding: 20px;
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card h2 {
+        color: #111827;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .card p {
+        color: #374151;
+        font-size: 14px;
+    }
+    .card ul {
+        padding-left: 20px;
+        color: #4b5563;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>News From Tadakaluru adda: Data Patterns & Aerospace</h1>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Data Patterns Analysis</h2>
+        <p>Latest insights and trends in data patterns:</p>
+        <ul>
+            <li>Pattern recognition in AI models</li>
+            <li>Predictive analytics for business intelligence</li>
+            <li>Time series forecasting trends</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Rocket Info</h2>
+        <p>Recent rocket launches and developments:</p>
+        <ul>
+            <li>Falcon 9 latest launch from SpaceX</li>
+            <li>Artemis mission updates by NASA</li>
+            <li>Private rocket startups making breakthroughs</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Fighter Jet Info</h2>
+        <p>Latest news in fighter jets:</p>
+        <ul>
+            <li>F-35 upgrades and international deliveries</li>
+            <li>Next-gen stealth fighter programs</li>
+            <li>Technological advancements in aviation defense</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
