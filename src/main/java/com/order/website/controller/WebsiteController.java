@@ -8,11 +8,11 @@ public class WebsiteController {
 
 	@GetMapping("/")
 	public String homePage() {
-		return "home/home";
+		return "home";
 	}
 
 	@GetMapping("/info")
 	public String contact() {
-		return "info/info"; // maps to /WEB-INF/views/contact.jsp
+		return "info"; // maps to /WEB-INF/views/contact.jsp
 	}
 }

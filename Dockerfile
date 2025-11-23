@@ -14,8 +14,5 @@ WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
 
-# Railway dynamically assigns port → DO NOT hardcode EXPOSE
-# EXPOSE 8080  <-- remove this
-
-# Start app using Railway PORT
-ENTRYPOINT ["sh", "-c", "java -Dserver.port=$PORT -jar app.jar"]
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
